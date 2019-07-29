@@ -1,3 +1,6 @@
+window.lastImageUpdate = undefined;
+window.updateTime = 5000;
+
 function init() {
     updateOutput();
 }
@@ -15,48 +18,46 @@ function updateOutput() {
     var body = document.getElementById('body');
     var m = moment();
 
-    body.innerHTML = "";
+    var dayOfWeek = m.format("d");
+    for (var i = 0; i < body.children.length; ++i) {
+        var dayPanel = body.children[i];
 
-    switch (m.format("d")) {
-        case "6": // Saturday
-        case "0": // Sunday
-            body.innerHTML = "It's weekend.<br><br>You should not have to work today. :(<br><br>Did someone make a change on readonly friday?!";
-            break;
-        case "1": // Monday
-            body.innerHTML = "Oh guy, a new week is starting...";
-            body.innerHTML += "<br><br><br><img src='"+getRandomArrayEntry(cartoons.monday)+"'>";
-            body.innerHTML += "<br><br><br>At least it is not readonly friday.";
-            break;
-        case "2": // Tuesday
-        case "3": // Wednesday
-        case "4": // Thursday
-            body.innerHTML = "It's not readonly friday. Happy changing!";
-            break;
-        case "5": // Friday
-            body.innerHTML = "Attention! It's readonly friday! Better don't change anything today...";
-            body.innerHTML += "<br><br><br><img src='"+getRandomArrayEntry(cartoons.friday)+"'>";
-            break;
+        if (dayPanel.id == 'day-'+dayOfWeek) {
+            dayPanel.classList.remove('hidden');
+        } else {
+            dayPanel.classList.add('hidden');
+        }
     }
 
-    switch (m.format("d")) {
-        case "5": // Friday
-            body.style.color = "#E00";
-            break;
-        case "1": // Monday
-        case "2": // Tuesday
-        case "3": // Wednesday
-        case "4": // Thursday
-            body.style.color = "#0D0";
-            break;
-        case "6": // Saturday
-        case "0": // Sunday
-            body.style.color = "#DD0";
-            break;
-    }
+    updateImages(m);
+    setTimeout(updateOutput, window.updateTime);
+}
 
-    setTimeout(updateOutput, 5000);
+function updateImages(m) {
+    if (
+        window.lastImageUpdate == undefined ||
+        moment.duration(m.diff(window.lastImageUpdate)).asSeconds() >= 86400
+    ) {
+        window.lastImageUpdate = m;
+
+        for (var i = 0; i < body.children.length; ++i) {
+            var dayPanel = body.children[i];
+            for (var j = 0; j < dayPanel.children.length; ++j) {
+                if (dayPanel.children[j].hasAttribute('data-random-source-list')) {
+                    setRandomImage(
+                        cartoons[dayPanel.children[j].getAttribute('data-random-source-list')],
+                        dayPanel.children[j]
+                    );
+                }
+            }
+        }
+    }
 }
 
 function getRandomArrayEntry(a) {
     return a[Math.floor(Math.random() * a.length)];
+}
+
+function setRandomImage(a, imgTag) {
+    imgTag.src = getRandomArrayEntry(a);
 }

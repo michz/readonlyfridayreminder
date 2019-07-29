@@ -14,3 +14,19 @@ body {
     font-weight: 600;
     text-align: center;
 }
+
+.day.hidden {
+    display: none;
+}
+
+#day-0, #day-6 {
+    color: #DD0;
+}
+
+#day-5 {
+    color: #E00;
+}
+
+#day-1, #day-2, #day-3, #day-4 {
+    color: #0D0;
+}

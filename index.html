@@ -3,9 +3,52 @@
     <head>
         <title>Read only friday reminder</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <link rel="stylesheet" href="./css/rofr.css">
     </head>
-    <body id="body" onload="init()">
+    <body onload="init()">
+        <div id="body">
+            <div id="day-0" class="day hidden">
+                It's weekend.
+                <br>
+                <br>
+                You should not have to work today. :(
+                <br>
+                <br>
+                Did someone make a change on readonly friday?!
+            </div>
+            <div id="day-1" class="day hidden">
+                Oh guy, a new week is starting...
+                <br><br><br>
+                <img data-random-source-list="monday">
+                <br><br><br>
+                At least it is not readonly friday.
+            </div>
+            <div id="day-2" class="day hidden">
+                It's not readonly friday. Happy changing!
+            </div>
+            <div id="day-3" class="day hidden">
+                It's not readonly friday. Happy changing!
+            </div>
+            <div id="day-4" class="day hidden">
+                It's not readonly friday. Happy changing!
+            </div>
+            <div id="day-5" class="day hidden">
+                Attention! It's readonly friday! Better don't change anything today...
+                <br><br><br>
+                <img data-random-source-list="friday">
+            </div>
+            <div id="day-6" class="day hidden">
+                It's weekend.
+                <br>
+                <br>
+                You should not have to work today. :(
+                <br>
+                <br>
+                Did someone make a change on readonly friday?!
+            </div>
+        </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/de.js"></script>
 
