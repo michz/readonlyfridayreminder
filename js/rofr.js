@@ -7,10 +7,14 @@ function init() {
 
 var cartoons = {
     monday: [
-        "https://imgs.xkcd.com/comics/weekend.png"
+        "https://imgs.xkcd.com/comics/weekend.png",
+        "https://imgs.xkcd.com/comics/dark_matter.png",
     ],
     friday: [
-        "https://upload.wikimedia.org/wikipedia/commons/2/20/Stopsign.svg"
+        "https://upload.wikimedia.org/wikipedia/commons/2/20/Stopsign.svg",
+        "https://sayingimages.com/wp-content/uploads/its-friday-friday-gotta-get-down-on-friday-memes.jpg",
+        "https://sayingimages.com/wp-content/uploads/hey-everybody-smile-its-friday-memes.jpg",
+        "https://sayingimages.com/wp-content/uploads/at-least-its-friday-memes.jpg",
     ],
 };
 
