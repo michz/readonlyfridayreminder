@@ -15,6 +15,7 @@ var cartoons = {
         "./img/pillow.jpg",
         "./img/stuff_done.jpg",
         "./img/tired_curve.jpg",
+        "./img/talk_about_linux.jpg",
     ],
     friday: [
         "https://upload.wikimedia.org/wikipedia/commons/2/20/Stopsign.svg",
