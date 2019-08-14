@@ -9,6 +9,12 @@ var cartoons = {
     monday: [
         "https://imgs.xkcd.com/comics/weekend.png",
         "https://imgs.xkcd.com/comics/dark_matter.png",
+        "https://imgs.xkcd.com/comics/dark_matter.png",
+        "./img/cooking_pasta.jpg",
+        "./img/look_like_an_idiot.jpg",
+        "./img/pillow.jpg",
+        "./img/stuff_done.jpg",
+        "./img/tired_curve.jpg",
     ],
     friday: [
         "https://upload.wikimedia.org/wikipedia/commons/2/20/Stopsign.svg",
