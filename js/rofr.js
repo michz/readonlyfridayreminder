@@ -10,6 +10,7 @@ var cartoons = {
         "https://imgs.xkcd.com/comics/weekend.png",
         "https://imgs.xkcd.com/comics/dark_matter.png",
         "https://imgs.xkcd.com/comics/old_game_worlds.png",
+        "https://imgs.xkcd.com/comics/exploits_of_a_mom.png",
         "./img/cooking_pasta.jpg",
         "./img/look_like_an_idiot.jpg",
         "./img/pillow.jpg",
